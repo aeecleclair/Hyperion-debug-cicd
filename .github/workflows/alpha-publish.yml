@@ -33,9 +33,6 @@ jobs:
           images: ${{ secrets.DOCKER_REGISTRY_URL }}/hyperion
           tags: |
             type=raw,value=alpha
-          labels: |
-            preprod.environment=${{ github.event.inputs.preprod_env }}
-            preprod.branch=${{ github.event.inputs.branch }}
 
       - name: Build and push preprod image
         uses: docker/build-push-action@v6.18.0
@@ -48,4 +45,4 @@ jobs:
           cache-from: |
             type=registry,ref=${{ secrets.DOCKER_REGISTRY_URL }}/hyperion:latest
             type=registry,ref=${{ secrets.DOCKER_REGISTRY_URL }}/hyperion:alpha
-          cache-to: type=registry,ref=${{ secrets.DOCKER_REGISTRY_URL }}/${{ github.repository }}/cache,mode=max
+          cache-to: type=inline

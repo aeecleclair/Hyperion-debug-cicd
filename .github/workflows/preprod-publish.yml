@@ -68,4 +68,4 @@ jobs:
             type=registry,ref=${{ secrets.DOCKER_REGISTRY_URL }}/hyperion:${{ github.event.inputs.preprod_env }}
             type=registry,ref=${{ secrets.DOCKER_REGISTRY_URL }}/hyperion:alpha
             type=registry,ref=${{ secrets.DOCKER_REGISTRY_URL }}/hyperion:latest
-          cache-to: type=registry,ref=${{ secrets.DOCKER_REGISTRY_URL }}/${{ github.repository }}/cache,mode=max
+          cache-to: type=inline
