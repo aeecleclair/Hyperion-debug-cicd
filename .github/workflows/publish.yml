@@ -45,5 +45,7 @@ jobs:
           cache-from: |
             type=registry,ref=${{ secrets.DOCKER_REGISTRY_URL }}/hyperion:alpha
             type=registry,ref=${{ secrets.DOCKER_REGISTRY_URL }}/hyperion:latest
+          cache-to: type=inline
+
 
 
