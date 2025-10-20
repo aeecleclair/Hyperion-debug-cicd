@@ -37,7 +37,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.8.0
         with:
-          images: ${{ secrets.DOCKER_REGISTRY_URL }}/hyperion
+          images: ${{ secrets.DOCKER_REGISTRY_IDENTIFER }}/hyperion
           tags: |
             type=raw,value=${{ github.event.inputs.preprod_env }}
             type=sha,prefix={{branch}}-
